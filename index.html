@@ -52,53 +52,59 @@
               <a class="nav-link" href="#footer">About</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <div class="d-flex">
             <input
+              id="searchInput"
               class="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
+            <button onclick="getAlbums()" class="btn btn-outline-light">
+              Search
+            </button>
+          </div>
         </div>
       </div>
     </nav>
-    <div style="width: 240px" class="container lateralad">
-      <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              height="200px"
-              src="https://nogood.io/wp-content/uploads/2020/09/spotify.0-300x200.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              height="200px"
-              src="https://recensiamomusica.com/wp-content/uploads/2018/02/Spotify-logo-1280x720.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              height="200px"
-              src="https://www.samma3a.com/tech/en/wp-content/uploads/sites/2/2018/09/Spotify-logo-300x200.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
+    <div class="searchResults"></div>
+   
+    </div>
+    <div
+      style="margin-top: 50px"
+      id="carouselExampleSlidesOnly"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            height="300px"
+            src="https://s3-eu-west-1.amazonaws.com/nusdigital/image/images/263849/original/TUSU_Awards_2020_web_banner.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            height="300px"
+            src="https://s3-eu-west-1.amazonaws.com/nusdigital/image/images/200241/original/Events_Logos_for_newsletter.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            height="300px"
+            src="https://i1.wp.com/esdomotica.net/wp-content/uploads/2021/01/Mistery-Box.png?fit=2000%2C300&ssl=1"
+            class="d-block w-100"
+            alt="..."
+          />
         </div>
       </div>
     </div>
-    <div style="width: 240px" class="container lateraladsx">
+
+    <div style="width: 240px" class="lateraladsx">
       <div
         id="carouselExampleSlidesOnly"
         class="carousel slide"
@@ -107,24 +113,24 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              height="200px"
-              src="https://nogood.io/wp-content/uploads/2020/09/spotify.0-300x200.jpg"
+              height="800px"
+              src="https://www.12manage.com/images/picture_advertising.gif"
               class="d-block w-100"
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
-              height="200px"
-              src="https://recensiamomusica.com/wp-content/uploads/2018/02/Spotify-logo-1280x720.jpg"
+              height="800px"
+              src="https://www.12manage.com/images/picture_advertising.gif"
               class="d-block w-100"
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
-              height="200px"
-              src="https://www.samma3a.com/tech/en/wp-content/uploads/sites/2/2018/09/Spotify-logo-300x200.jpg"
+              height="800px"
+              src="https://www.12manage.com/images/picture_advertising.gif"
               class="d-block w-100"
               alt="..."
             />
@@ -133,10 +139,13 @@
       </div>
     </div>
     <div id="bestalbums" class="container favalbums">
-      <h2 style="margin-top: 10vh">Top Albums of the week</h2>
+      <h2 class="h2tomove" style="margin-top: -750px">
+        Top Albums of the week
+      </h2>
       <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card bg-dark text-white albumimg">
+            <a href="#courtainCall">
             <img
               src="https://images-na.ssl-images-amazon.com/images/I/81rcmYHadOL._AC_SY450_.jpg"
               class="card-img"
@@ -145,7 +154,7 @@
             <div onclick="toggleShowReviewA()" class="card-img-overlay">
               <span class="card-title text-center"> Curtain Call </span
               ><span class="badge bg-primary">New</span>
-            </div>
+            </div></a>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
@@ -191,40 +200,20 @@
 
     <div style="display: none" class="container albumreviewA">
       <section>
-        <h2>Curtain Call Review#</h2>
+        <h2 id="courtainCall">Curtain Call Review#</h2>
 
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <video controls onclick="playPause()" id="v1" src="v1.mp4"></video>
             <p style="color: white">Here is a small taste of the album</p>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-lg-6">
             <div class="bd-example">
-              <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-sm">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-md">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-lg">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-xl">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+              <table
+                id="artistTable"
+                style="color: white; margin-top: -60px"
+                class="table table-borderless"
+              ></table>
             </div>
           </div>
         </div>
@@ -232,7 +221,7 @@
     </div>
     <div style="display: none" class="container albumreviewB">
       <section>
-        <h2>The Eminem Show Review#</h2>
+        <h2 id="eminemShow" >The Eminem Show Review#</h2>
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <video controls onclick="playPause()" id="v2" src="v2.mp4"></video>
@@ -240,31 +229,11 @@
           </div>
           <div class="col-sm-12 col-md-6">
             <div class="bd-example">
-              <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-sm">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-md">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-lg">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-xl">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+              <table
+                id="artistTable2"
+                style="color: white; margin-top: -60px"
+                class="table table-borderless"
+              ></table>
             </div>
           </div>
         </div>
@@ -280,31 +249,11 @@
           </div>
           <div class="col-sm-12 col-md-6">
             <div class="bd-example">
-              <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-sm">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-md">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-lg">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-xl">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+              <table
+                id="artistTable3"
+                style="color: white; margin-top: -60px"
+                class="table table-borderless"
+              ></table>
             </div>
           </div>
         </div>
@@ -320,31 +269,11 @@
           </div>
           <div class="col-sm-12 col-md-6">
             <div class="bd-example">
-              <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-sm">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-md">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-lg">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              <ul class="list-group list-group-horizontal-xl">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+              <table
+                id="artistTable4"
+                style="color: white; margin-top: -60px"
+                class="table table-borderless"
+              ></table>
             </div>
           </div>
         </div>
@@ -438,7 +367,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
               <img
-                onclick="toggleArtist()"
+                onclick="toggleArtist22(1713267)"
                 src="https://www.21secolo.news/wp-content/uploads/2014/11/2550913-4650940812-linki.jpg"
                 class="d-block w-100"
                 alt="..."
@@ -449,7 +378,7 @@
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img
-                onclick="toggleArtist1()"
+                onclick="toggleArtist22(119606)"
                 src="https://www.wallpapertip.com/wmimgs/5-56263_eminem-hd.jpg"
                 class="d-block w-100"
                 alt="..."
@@ -460,7 +389,7 @@
             </div>
             <div class="carousel-item">
               <img
-                onclick="toggleArtist2()"
+                onclick="toggleArtist22(731513)"
                 src="https://images5.alphacoders.com/946/thumb-1920-946639.png"
                 class="d-block w-100"
                 alt="..."
@@ -489,33 +418,7 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div class="container">
-          <div class="card text-center">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                  <p class="nav-link active" aria-current="true" 
-                    >Linking Park</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" >Eminem</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" >Skrillex</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-            
-            </div>
-          </div>
-        </div>
+        <div id="music" class="container"></div>
       </div>
     </div>
 
@@ -599,27 +502,512 @@
     <script>
       const toggleShowReviewA = () => {
         let album = document.querySelector(".albumreviewA");
+        let album2 = document.querySelector(".albumreviewB").style;
+        let album3 = document.querySelector(".albumreviewC").style;
+        let album4 = document.querySelector(".albumreviewD").style;
         album.style.display == "none"
           ? (album.style.display = "block")
           : (album.style.display = "none");
+        if (
+          album2.display == "block" ||
+          album3.display == "block" ||
+          album4.display == "block"
+        ) {
+          (album2.display = "none"),
+            (album3.display = "none"),
+            (album4.display = "none");
+        }
+        toggleArtist23(119606);
       };
       const toggleShowReviewB = () => {
         let album = document.querySelector(".albumreviewB");
+        let album2 = document.querySelector(".albumreviewA").style;
+        let album3 = document.querySelector(".albumreviewC").style;
+        let album4 = document.querySelector(".albumreviewD").style;
+
         album.style.display == "none"
           ? (album.style.display = "block")
           : (album.style.display = "none");
+        if (
+          album2.display == "block" ||
+          album3.display == "block" ||
+          album4.display == "block"
+        ) {
+          (album2.display = "none"),
+            (album3.display = "none"),
+            (album4.display = "none");
+        }
+        toggleArtist23(103248);
       };
       const toggleShowReviewC = () => {
         let album = document.querySelector(".albumreviewC");
+        let album2 = document.querySelector(".albumreviewB").style;
+        let album3 = document.querySelector(".albumreviewA").style;
+        let album4 = document.querySelector(".albumreviewD").style;
+
         album.style.display == "none"
           ? (album.style.display = "block")
           : (album.style.display = "none");
+        if (
+          album2.display == "block" ||
+          album3.display == "block" ||
+          album4.display == "block"
+        ) {
+          (album2.display = "none"),
+            (album3.display = "none"),
+            (album4.display = "none");
+        }
+        toggleArtist23(162035);
       };
       const toggleShowReviewD = () => {
         let album = document.querySelector(".albumreviewD");
+        let album2 = document.querySelector(".albumreviewB").style;
+        let album3 = document.querySelector(".albumreviewC").style;
+        let album4 = document.querySelector(".albumreviewA").style;
+
         album.style.display == "none"
           ? (album.style.display = "block")
           : (album.style.display = "none");
+        if (
+          album2.display == "block" ||
+          album3.display == "block" ||
+          album4.display == "block"
+        ) {
+          (album2.display = "none"),
+            (album3.display = "none"),
+            (album4.display = "none");
+        }
+        toggleArtist23(7090505);
+      };
+
+      async function getAlbums() {
+        let search = document.querySelector("input").value;
+        const response = await fetch(
+          "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + search, //query
+          {
+            headers: {
+              "x-rapidapi-key":
+                "5a5e031fd8msh210af9e647b3834p1c116ejsn3b5700d24f69",
+              "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            },
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+        displayResults(data.data.splice(0, 4));
+        return data;
+      }
+      const toggleSearch = () => {
+        let body = document.querySelector("body");
+        const asd = document.querySelectorAll("search-result");
+
+        body.addEventListener("click", function helloClick() {
+          console.log("hi");
+          let div = document.querySelector(".searchResults");
+          div.style.display = "none";
+          div.innerHTML = "";
+          body.removeEventListener("click", helloClick);
+        });
+      };
+      const displayResults = (data) => {
+        let div = document.querySelector(".searchResults");
+
+        div.style.padding = "20px";
+        div.style.display = "block";
+        div.innerHTML = "";
+        data.forEach((element) => {
+          let div2 = document.createElement("div");
+          div2.classList.add("searchDiv");
+          div2.classList.add("row");
+          let ptag = document.createElement("p");
+          let img = document.createElement("img");
+          img.classList.add("col-sm-3");
+          ptag.classList.add("col-sm-6");
+          ptag.innerText = `${element.album.title}`;
+
+          img.setAttribute("src", element.album.cover);
+          img.classList.add("search-result");
+
+          div2.appendChild(img);
+          div2.appendChild(ptag);
+          div.appendChild(div2);
+        });
+        toggleSearch();
+      };
+
+      async function toggleArtist22(id) {
+        const response = await fetch(
+          "https://deezerdevs-deezer.p.rapidapi.com/album/" + id, //query
+          {
+            headers: {
+              "x-rapidapi-key":
+                "5a5e031fd8msh210af9e647b3834p1c116ejsn3b5700d24f69",
+              "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            },
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+        return data;
+      }
+      async function toggleArtist23(id) {
+        const response = await fetch(
+          "https://deezerdevs-deezer.p.rapidapi.com/album/" + id, //query
+          {
+            headers: {
+              "x-rapidapi-key":
+                "5a5e031fd8msh210af9e647b3834p1c116ejsn3b5700d24f69",
+              "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            },
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+        displayAlbums1(data);
+        displayAlbums2(data);
+        displayAlbums3(data);
+        displayAlbums4(data);
+        return data;
+      }
+      const displayAlbums1 = (data) => {
+        let at = document.getElementById("artistTable");
+        at.innerHTML = ` <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">${data.title}</th>
+                    
+                    <th scope="col">${data.artist.name}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td><img src="${data.cover}"/></td>
+                   
+                    <td><img src="${data.artist.picture}"/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[0].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[1].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[2].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[3].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[4].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[5].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[6].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[7].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[8].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[9].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[10].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[11].title}</td>
+                   
+                  </tr>
+                </tbody>`;
+      };
+      const displayAlbums2 = (data) => {
+        let at = document.getElementById("artistTable2");
+        at.innerHTML = ` <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">${data.title}</th>
+                    
+                    <th scope="col">${data.artist.name}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td><img src="${data.cover}"/></td>
+                   
+                    <td><img src="${data.artist.picture}"/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[0].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[1].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[2].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[3].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[4].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[5].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[6].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[7].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[8].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[9].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[10].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[11].title}</td>
+                   
+                  </tr>
+                </tbody>`;
+      };
+      const displayAlbums3 = (data) => {
+        let at = document.getElementById("artistTable3");
+        at.innerHTML = ` <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">${data.title}</th>
+                    
+                    <th scope="col">${data.artist.name}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td><img src="${data.cover}"/></td>
+                   
+                    <td><img src="${data.artist.picture}"/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[0].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[1].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[2].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[3].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[4].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[5].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[6].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[7].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[8].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[9].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[10].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[11].title}</td>
+                   
+                  </tr>
+                </tbody>`;
+      };
+      const displayAlbums4 = (data) => {
+        let at = document.getElementById("artistTable4");
+        at.innerHTML = ` <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">${data.title}</th>
+                    
+                    <th scope="col">${data.artist.name}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td><img src="${data.cover}"/></td>
+                   
+                    <td><img src="${data.artist.picture}"/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[0].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[1].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[2].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[3].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[4].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[5].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[6].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[7].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[8].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[9].title}</td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[10].title}</td>
+                    
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>${data.tracks.data[11].title}</td>
+                   
+                  </tr>
+                </tbody>`;
       };
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
